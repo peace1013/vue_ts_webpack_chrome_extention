@@ -1,0 +1,13 @@
+version: '3'
+
+volumes:
+  exception-volumes: # volume trick用のダミーのvolume
+
+services:
+  node:
+    image: node:18.2
+    working_dir: /chrome_extention
+    volumes:
+      - .:/chrome_extention
+      - exception-volumes:/chrome_extention/node_modules
+    tty: true
